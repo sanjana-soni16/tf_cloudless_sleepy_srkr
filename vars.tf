@@ -7,5 +7,13 @@ variable "sample_var" {
 
 variable "sleepy_time" {
   description = "How long our local-exec will take a nap."
-  default     = 0
+  default     = 20
+}
+
+variable "number" {
+  description = "How long our local-exec will take a nap."
+  default = {
+    uuid = "bar",
+    fsdf = "barsd"
+  }
 }
