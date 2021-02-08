@@ -1,7 +1,7 @@
 #TF12
 variable "filename" {
   description = "Name of the file. Give inside tmp/.schematics"
-  default     = "reusedfile.sh"
+  default     = "reusedfile.txt"
 }
 
 variable "shouldcontain" {
