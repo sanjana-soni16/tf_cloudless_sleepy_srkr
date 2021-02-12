@@ -19,7 +19,7 @@ variable "writecontent" {
 
 # Runs a shell script
 resource "null_resource" "repeated" {
-  count = var.numb % 3
+  count = floor(var.numb / 3)
   triggers = {
     uuid = uuid()
   }
