@@ -3,7 +3,7 @@ terraform {
         external = ">= 1.2.0"
         ibm = {
             source = "IBM-Cloud/ibm"
-            version = " 1.21.0"
+            version = " 1.25.0"
         }
     }
 }
