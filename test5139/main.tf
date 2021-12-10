@@ -12,3 +12,13 @@ resource "null_resource" "sleep" {
     command = "sleep Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused"
   }
 }
+
+variable in {
+    default ="a"
+    validation {
+        condition = (
+          length(var.in) > 1
+        )
+        error_message = "Template Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused."
+      }
+    }
