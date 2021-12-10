@@ -1,24 +1,12 @@
-# Create an arbitrary local resource
-data "template_file" "test" {
-  template = "Template Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused"
-}
 
-resource "null_resource" "sleep" {
-  triggers = {
-    uuid = uuid()
-  }
-
-  provisioner "local-exec" {
-    command = "sleep Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused"
-  }
-}
-
-variable in {
-    default ="a"
-    validation {
-        condition = (
-          length(var.in) > 1
-        )
-        error_message = "Template Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused."
-      }
+terraform {
+  required_providers {
+    ibm = {
+      source = "IBM-Cloud/ibm"
+      version = "1.37.0"
     }
+  }
+}
+data "ibm_database" "cluster" {
+  name = "Error: Get \"http://localhost/api/v1/namespaces/vedoc-core-cicd\": dial tcp [::1]:80: connect: connection refused"
+}
