@@ -1,6 +1,6 @@
 data "ibm_iam_auth_token" "tokendata" {}
 
-variable "availability_zone_names" {  
+variable "IC_API_KEY" {  
   type    = string
   default = "some"
 }
