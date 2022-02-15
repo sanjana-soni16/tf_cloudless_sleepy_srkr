@@ -1,5 +1,10 @@
 data "ibm_iam_auth_token" "tokendata" {}
 
+variable "availability_zone_names" {  
+  type    = string
+  default = "some"
+}
+
 
 resource "null_resource" "print_env_tokens" {
   triggers = {
@@ -7,6 +12,6 @@ resource "null_resource" "print_env_tokens" {
   }
 
   provisioner "local-exec" {
-    command = "echo IAM: $IC_IAM_TOKEN Refresh: $IC_REFRESH_TOKEN"
+    command = "echo IAM:  Refresh: "
   }
 }
